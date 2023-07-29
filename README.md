@@ -4,7 +4,7 @@
 2. Strict class type (done)
 3. Menyertakan unit test (done)
 4. Format request dan response menggunakan standar HTTP REST API (done)
-5. Menggunakan akses token untuk autentikasi (Json Web Token) ()
+5. Menggunakan akses token untuk autentikasi (Json Web Token) (done)
 # how to run 
 ## first run 
 - git clone git@github.com:coding-assestment/inosoft-test-code.git project && cd project && git chekout master
