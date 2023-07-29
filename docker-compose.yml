@@ -1,0 +1,65 @@
+version: '3.5'
+
+# networks:
+#   pb_network:
+#     name: pb_network
+#     external: true
+
+services:
+  app:
+    container_name: inosoft
+    # image: ${IMAGE_NAME}:${IMAGE_TAG}
+    build:
+      context: .
+      # dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1001}
+    volumes:
+      - "./src:/var/www/html"
+      - ./.env:/var/www/html/.env:delegated
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+      - mongo-express
+    # networks:
+    #   - pb_network
+  sut:
+    image: alpine:3.13
+    depends_on:
+      - app
+    command: /tmp/run_tests.sh
+    volumes:
+      - "./run_tests.sh:/tmp/run_tests.sh:ro"
+  
+  composer_inosoft:
+    image: composer
+    container_name: composer_inosoft
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - app
+    # entrypoint: ['composer', '--ignore-platform-reqs']
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      
