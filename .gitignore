@@ -1,0 +1,8 @@
+mysql
+.DS_Store
+.idea
+src/vendors
+/src/vendor
+./src/vendor
+/storage/
+.env
