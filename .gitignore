@@ -1,8 +1,14 @@
 mysql
 .DS_Store
 .idea
-src/vendors
+src/vendor
 /src/vendor
 ./src/vendor
+src/node_modules
+/src/node_modules
+./src/node_modules
 /storage/
 .env
+src/.env
+/src/.env
+./src/.env
