@@ -7,7 +7,7 @@
 5. Menggunakan akses token untuk autentikasi (Json Web Token) ()
 # how to run 
 ## first run 
-- git clone git@github.com:coding-assestment/inosoft-test-code.git project && cd project 
+- git clone git@github.com:coding-assestment/inosoft-test-code.git project && cd project && git chekout master
 - cp .env.example .env
 - docker-compose up -d 
 - docker exec -it inosoft sh
