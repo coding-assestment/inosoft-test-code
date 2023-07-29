@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "650b057f-17b9-4751-94c0-c548a3b06f46",
+		"name": "INOSOFT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/vehicles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicles getSales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/vehicles/get-sales",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"get-sales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/vehicles/64c3efa9cc92b5305403a852",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"64c3efa9cc92b5305403a852"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"New Vario 2023\", \r\n    \"type\": 0,\r\n    \"machine\": \"110cc\",\r\n    \"passanger_capacity\": 8,\r\n    \"car_type\": \"CITICAR\",\r\n    \"supenstion_type\": \"matic\",\r\n    \"transmission_type\": \"10-1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/vehicles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Toyota Calya Update\", \r\n    \"price\": 3000,\r\n    \"type\": 1,\r\n    \"machine\": \"1600cc\",\r\n    \"passanger_capacity\": 8,\r\n    \"car_type\": \"CITICAR\",\r\n    \"supenstion_type\": \"matic\",\r\n    \"transmission_type\": \"10-1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/vehicles/64c453f6ce82c0c5e2040142",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"64c453f6ce82c0c5e2040142"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle addStock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"qty\": \"7\", \r\n    \"transaction_detail\": \"testing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/vehicles/add-stock/64c3efa9cc92b5305403a852",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"add-stock",
+						"64c3efa9cc92b5305403a852"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle sale",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"qty\": \"3\", \r\n    \"transaction_detail\": \"testing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/vehicles/sale/64c3efa9cc92b5305403a852",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"sale",
+						"64c3efa9cc92b5305403a852"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle holdStock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"qty\": \"1\", \r\n    \"transaction_detail\": \"testing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/vehicles/hold/64c453f6ce82c0c5e2040142",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"hold",
+						"64c453f6ce82c0c5e2040142"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Brio Satya E\", \r\n    \"type\": 1,\r\n    \"detail\": \"{}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/vehicles/64c3768e4533254a05000bc4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"64c3768e4533254a05000bc4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
